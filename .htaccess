@@ -1,0 +1,17 @@
+# Activamos el motor de reescritura de URLs
+RewriteEngine On
+
+# La raíz del proyecto ( / ) va directo al punto de entrada.
+# Esta regla no tiene condiciones porque la raíz ES una carpeta real
+# y las condiciones !-d la bloquearían.
+RewriteRule ^$ app/index.php [L]
+
+# Si la petición es un archivo real (CSS, JS, imágenes, video), lo servimos directo.
+# Esto evita que el Router intente manejar los assets estáticos.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Todo lo demás lo redirigimos al punto de entrada pasando la URL como parámetro.
+# Usamos ^(.+)$ con + para que solo aplique cuando hay algo en la URL (no raíz).
+# QSA preserva otros parámetros GET que puedan existir.
+RewriteRule ^(.+)$ app/index.php?url=$1 [QSA,L]

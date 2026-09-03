@@ -1,0 +1,301 @@
+.acciones{
+    display: flex;
+    gap: 10px;
+}
+
+/* BOTÓN EDITAR */
+
+.btn-editar{
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-editar:hover{
+    background: #1d4ed8;
+}
+
+/* BOTÓN ELIMINAR */
+
+.btn-eliminar{
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background: #dc2626;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-eliminar:hover{
+    background: #b91c1c;
+}
+
+/* ── TABLA HEADER (título + botón nuevo) ── */
+.tabla-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tabla-titulo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.btn-nuevo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #4f46e5;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-nuevo:hover {
+    background: #4338ca;
+}
+
+/* ── BADGE STOCK ── */
+.badge-stock {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge-stock--low {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ── FORMULARIO REGISTRO ── */
+.registro-form {
+    max-width: 520px;
+}
+
+.registro-form h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #0f172a;
+}
+
+.registro-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.registro-form label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.registro-form input,
+.registro-form select {
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.registro-form input:focus,
+.registro-form select:focus {
+    border-color: #4f46e5;
+}
+
+.btn.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+
+.btn.btn-primary:hover {
+    background: #4338ca;
+}
+
+/* ── BADGE ROL ── */
+.badge-rol {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.badge-rol--superadmin {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+.badge-rol--admin {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* ── ALERTA EN FORMULARIO DE REGISTRO ── */
+.registro-alerta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* ── BOTONES DE ACCIÓN DEL FORMULARIO ── */
+.registro-acciones {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn.btn-cancelar {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: transparent;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn.btn-cancelar:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+/* ── UPLOAD DE IMAGEN ── */
+.img-upload-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 200px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s, background 0.2s;
+    background: #f8fafc;
+}
+
+.img-upload-wrap:hover,
+.img-upload-wrap.drag-over {
+    border-color: #4f46e5;
+    background: #eef2ff;
+}
+
+.img-upload-wrap--sm {
+    max-width: 100%;
+    height: 140px;
+    margin-bottom: 4px;
+}
+
+.img-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.img-placeholder i {
+    font-size: 32px;
+}
+
+.img-placeholder span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.img-placeholder small {
+    font-size: 11px;
+    color: #cbd5e1;
+}
+
+.img-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.img-file-input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+/* ── IMAGEN EN TABLA ── */
+.tabla-img {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.tabla-img-placeholder {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    font-size: 18px;
+}
