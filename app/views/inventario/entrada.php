@@ -9,7 +9,6 @@
 </head>
 <body>
 
-    <!-- Topbar -->
     <div class="inv-topbar">
         <a href="<?php echo BASE_URL; ?>/dashboard" class="inv-back">
             <i class="fa-solid fa-arrow-left"></i> Dashboard
@@ -22,38 +21,32 @@
         </a>
     </div>
 
-    <!-- Card principal -->
     <div class="inv-card">
 
-        <!-- Producto escaneado -->
         <div class="inv-product" id="productBox">
             <div class="inv-product-img" id="productImg">
                 <i class="fa-solid fa-cubes"></i>
             </div>
             <div class="inv-product-info">
-                <div class="inv-product-name" id="productName">Esperando escaneoâ€¦</div>
+                <div class="inv-product-name" id="productName">Esperando escaneo...</div>
                 <div class="inv-product-meta" id="productStock"></div>
             </div>
             <div class="inv-product-counter" id="contador"></div>
         </div>
 
-        <!-- Input de cÃ³digo -->
         <div class="inv-input-wrap">
             <i class="fa-solid fa-barcode inv-input-icon"></i>
             <input type="text" id="codigo"
-                   placeholder="Escanea o escribe el cÃ³digo de barras"
+                   placeholder="Escanea o escribe el codigo de barras"
                    autocomplete="off" autofocus>
         </div>
 
-        <!-- Mensaje resultado -->
         <div class="inv-mensaje" id="mensaje"></div>
 
-        <!-- BotÃ³n cÃ¡mara -->
         <button type="button" class="inv-btn-camara" id="btnCamara">
-            <i class="fa-solid fa-camera"></i> Usar cÃ¡mara
+            <i class="fa-solid fa-camera"></i> Usar camara
         </button>
 
-        <!-- Visor de cÃ¡mara -->
         <div class="inv-camera-wrap" id="cameraContainer">
             <video id="cameraVideo" autoplay playsinline muted></video>
             <div class="inv-camera-overlay">
@@ -79,4 +72,3 @@
     <script src="<?php echo BASE_URL; ?>/public/js/inventario-entrada.js"></script>
 </body>
 </html>
-

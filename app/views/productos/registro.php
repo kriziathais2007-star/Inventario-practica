@@ -23,7 +23,7 @@
 
     <div class="rp-wrapper">
 
-        <!-- Columna izquierda: imagen -->
+        <!-- Imagen -->
         <div class="rp-img-col">
             <div class="rp-img-drop" id="imgDrop">
                 <img id="imgPreview" src="" alt="Preview" class="rp-img-preview hidden">
@@ -32,18 +32,16 @@
                         <i class="fa-solid fa-image"></i>
                     </div>
                     <p class="rp-img-label">Arrastra una imagen<br>o haz clic para seleccionar</p>
-                    <p class="rp-img-hint">JPG Â· PNG Â· WEBP &nbsp;Â·&nbsp; mÃ¡x. 2 MB</p>
+                    <p class="rp-img-hint">JPG &middot; PNG &middot; WEBP &middot; max. 2 MB</p>
                 </div>
                 <input type="file" id="imgInput" accept="image/jpeg,image/png,image/webp,image/gif" class="rp-img-input">
             </div>
-
-            <!-- BotÃ³n quitar imagen -->
             <button type="button" class="rp-img-remove hidden" id="btnQuitarImg">
                 <i class="fa-solid fa-xmark"></i> Quitar imagen
             </button>
         </div>
 
-        <!-- Columna derecha: formulario -->
+        <!-- Formulario -->
         <div class="rp-form-col">
             <div class="rp-header">
                 <h1 class="rp-title">Nuevo producto</h1>
@@ -56,7 +54,7 @@
 
                 <div class="rp-field">
                     <label for="codigo">
-                        CÃ³digo de barras / SKU
+                        Codigo de barras / SKU
                         <span class="rp-required">*</span>
                     </label>
                     <div class="rp-input-wrap">
@@ -82,9 +80,9 @@
                 </div>
 
                 <div class="rp-field">
-                    <label for="descripcion">DescripciÃ³n <span class="rp-optional">(opcional)</span></label>
+                    <label for="descripcion">Descripcion <span class="rp-optional">(opcional)</span></label>
                     <textarea id="descripcion" name="descripcion" rows="2"
-                              placeholder="Marca, presentaciÃ³n, detallesâ€¦"></textarea>
+                              placeholder="Marca, presentacion, detalles..."></textarea>
                 </div>
 
                 <div class="rp-row">
@@ -128,10 +126,9 @@
             </form>
         </div>
 
-    </div><!-- /.rp-wrapper -->
+    </div>
 </main>
 
-<!-- Toast de notificaciÃ³n -->
 <div class="rp-toast" id="rpToast" role="alert" aria-live="polite">
     <i class="rp-toast-icon fa-solid" id="rpToastIcon"></i>
     <span id="rpToastMsg"></span>
@@ -143,4 +140,3 @@
 <script src="<?php echo BASE_URL; ?>/public/js/registro-producto.js"></script>
 </body>
 </html>
-

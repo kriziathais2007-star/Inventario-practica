@@ -38,9 +38,9 @@
                     <thead>
                         <tr>
                             <th>Imagen</th>
-                            <th>CÃ³digo</th>
+                            <th>Codigo</th>
                             <th>Nombre</th>
-                            <th>DescripciÃ³n</th>
+                            <th>Descripcion</th>
                             <th>Stock</th>
                             <th>Precio</th>
                             <th>Acciones</th>
@@ -82,7 +82,8 @@
                                             data-stock="<?php echo $p['stock']; ?>"
                                             data-precio="<?php echo $p['precio']; ?>"
                                             data-imagen="<?php echo htmlspecialchars($p['imagen'] ?? ''); ?>"
-                                            data-imagen-src="<?php echo $imgSrc; ?>">                                            <i class="fa-solid fa-pen"></i>
+                                            data-imagen-src="<?php echo $imgSrc; ?>">
+                                            <i class="fa-solid fa-pen"></i>
                                         </button>
                                         <button class="btn-eliminar" data-id="<?php echo $p['id_producto']; ?>">
                                             <i class="fa-solid fa-trash"></i>
@@ -107,7 +108,6 @@
             <input type="hidden" id="edit-id" name="id_producto">
             <input type="hidden" id="edit-imagen-actual" name="imagen_actual">
 
-            <!-- Preview imagen en el modal -->
             <div class="form-group">
                 <label>Imagen</label>
                 <div class="img-upload-wrap img-upload-wrap--sm" id="editImgWrap">
@@ -124,7 +124,7 @@
 
             <div class="form-row">
                 <div class="form-group">
-                    <label>CÃ³digo</label>
+                    <label>Codigo</label>
                     <input type="text" id="edit-codigo" name="codigo" required>
                 </div>
                 <div class="form-group">
@@ -133,7 +133,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label>DescripciÃ³n</label>
+                <label>Descripcion</label>
                 <input type="text" id="edit-descripcion" name="descripcion">
             </div>
             <div class="form-row">
@@ -157,4 +157,3 @@
 <script src="<?php echo BASE_URL; ?>/public/js/productos-main.js"></script>
 </body>
 </html>
-

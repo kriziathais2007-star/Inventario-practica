@@ -55,7 +55,7 @@
             </div>
             <div class="stat-info">
                 <div class="stat-value"><?php echo (int)($stats['stock_bajo'] ?? 0); ?></div>
-                <div class="stat-label">Stock bajo (â‰¤ 5)</div>
+                <div class="stat-label">Stock bajo ( -5)</div>
             </div>
         </div>
     </div>
