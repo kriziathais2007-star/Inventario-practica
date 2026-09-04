@@ -3,14 +3,15 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg:         #f6f7f9;
+    --bg:         #fff0f5;
     --card:       #ffffff;
-    --border:     #e2e4e9;
-    --text:       #111827;
-    --muted:      #6b7280;
-    --sidebar-bg: #1c2333;
+    --border:     #fbc8d8;
+    --text:       #3b1a26;
+    --muted:      #a06070;
+    --sidebar-bg: #3b1a26;
     --sidebar-w:  230px;
-    --accent:     #f97316;
+    --accent:     #e8607a;
+    --accent-2:   #c94b65;
     --topbar-h:   56px;
     --radius:     10px;
 }
@@ -45,7 +46,7 @@ body {
     border: none;
     cursor: pointer;
     font-size: 1.1rem;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.6);
     padding: 6px 8px;
     border-radius: 6px;
     transition: color 0.2s;
@@ -57,7 +58,7 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(59,26,38,0.35);
     z-index: 150;
 }
 .overlay.show { display: block; }
@@ -83,7 +84,7 @@ body {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #fff;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     display: flex;
     align-items: center;
     gap: 9px;
@@ -93,7 +94,7 @@ body {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     font-size: 1rem;
-    color: var(--accent);
+    color: #f9a8c0;
 }
 
 /* NAV */
@@ -112,7 +113,7 @@ body {
     gap: 10px;
     padding: 9px 12px;
     text-decoration: none;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.5);
     font-size: 0.83rem;
     font-weight: 500;
     border-radius: 7px;
@@ -125,15 +126,15 @@ body {
     flex-shrink: 0;
 }
 .sidebar ul li a:hover {
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.07);
     color: #fff;
 }
 .sidebar ul li a.activo {
-    background: rgba(249,115,22,0.15);
+    background: rgba(232,96,122,0.2);
     color: #fff;
     font-weight: 600;
 }
-.sidebar ul li a.activo i { color: var(--accent); }
+.sidebar ul li a.activo i { color: #f9a8c0; }
 
 /* DROPDOWN */
 .sidebar .dropdown { position: relative; }
@@ -142,13 +143,13 @@ body {
     margin-left: auto;
     font-size: 0.65rem;
     transition: transform 0.2s;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.3);
 }
 .sidebar .dropdown.show .arrow { transform: rotate(180deg); }
 .sidebar .dropdown-content {
     display: none;
     padding-left: 16px;
-    border-left: 1px solid rgba(255,255,255,0.07);
+    border-left: 1px solid rgba(255,255,255,0.08);
     margin-left: 22px;
     margin-top: 2px;
 }
@@ -156,21 +157,21 @@ body {
 .sidebar .dropdown-content a {
     padding: 7px 10px;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.4);
     border-radius: 6px;
 }
 .sidebar .dropdown-content a:hover {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
     color: #fff;
 }
 .sidebar .dropdown-content i { width: 14px; font-size: 0.78rem; }
 
 /* LOGOUT */
 .nav-logout { margin-top: auto; padding-bottom: 10px; }
-.nav-logout a { color: rgba(239,68,68,0.55) !important; }
+.nav-logout a { color: rgba(249,168,192,0.5) !important; }
 .nav-logout a:hover {
-    background: rgba(239,68,68,0.08) !important;
-    color: #f87171 !important;
+    background: rgba(232,96,122,0.12) !important;
+    color: #f9a8c0 !important;
 }
 
 /* ─── MAIN ──────────────────────────────────────── */
@@ -180,7 +181,6 @@ main {
     min-height: 100vh;
 }
 
-/* BREADCRUMB */
 .breadcrumb {
     display: flex;
     align-items: center;
@@ -192,7 +192,6 @@ main {
 .breadcrumb i { font-size: 0.55rem; }
 #breadcrumb-page { color: var(--text); font-weight: 600; }
 
-/* CARD */
 .main-content {
     background: var(--card);
     border-radius: var(--radius);
@@ -207,7 +206,6 @@ main {
     gap: 14px;
     margin-bottom: 20px;
 }
-
 .stat-card {
     background: var(--card);
     border-radius: var(--radius);
@@ -218,7 +216,7 @@ main {
     gap: 14px;
     transition: border-color 0.2s;
 }
-.stat-card:hover { border-color: #c4c9d4; }
+.stat-card:hover { border-color: var(--accent); }
 
 .stat-icon {
     width: 44px;
@@ -229,11 +227,9 @@ main {
     justify-content: center;
     font-size: 1.15rem;
     flex-shrink: 0;
+    background: #fde8ef;
+    color: var(--accent);
 }
-.stat-icon--a { background: #fff3e8; color: #f97316; }
-.stat-icon--b { background: #fef9ee; color: #d97706; }
-.stat-icon--c { background: #fef2f2; color: #dc2626; }
-.stat-icon--d { background: #fdf4ff; color: #a855f7; }
 
 .stat-info { flex: 1; min-width: 0; }
 .stat-value {
@@ -243,10 +239,7 @@ main {
     line-height: 1;
     margin-bottom: 3px;
 }
-.stat-label {
-    font-size: 0.76rem;
-    color: var(--muted);
-}
+.stat-label { font-size: 0.76rem; color: var(--muted); }
 
 /* ─── QUICK ACTIONS ──────────────────────────────── */
 .quick-actions {
@@ -254,7 +247,6 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 14px;
 }
-
 .action-card {
     background: var(--card);
     border-radius: var(--radius);
@@ -277,20 +269,21 @@ main {
     justify-content: center;
     font-size: 1.1rem;
     flex-shrink: 0;
+    background: #fde8ef;
+    color: var(--accent);
 }
-.action-card-icon--in  { background: #fff3e8; color: #f97316; }
-.action-card-icon--out { background: #fef2f2; color: #dc2626; }
+.action-card-title { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.action-card-sub   { font-size: 0.73rem; color: var(--muted); }
 
-.action-card-title {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 2px;
-}
-.action-card-sub {
-    font-size: 0.73rem;
-    color: var(--muted);
-}
+/* Clases antiguas por compatibilidad */
+.stat-icon--a, .stat-icon--b, .stat-icon--c, .stat-icon--d,
+.stat-icon--orange, .stat-icon--yellow, .stat-icon--red,
+.stat-icon--pink, .stat-icon--green, .stat-icon--emerald,
+.stat-icon--purple { background: #fde8ef; color: var(--accent); }
+
+.action-card-icon--in, .action-card-icon--out,
+.action-card-icon--green, .action-card-icon--red,
+.action-card-icon--orange { background: #fde8ef; color: var(--accent); }
 
 /* ─── DESKTOP ────────────────────────────────────── */
 @media (min-width: 768px) {
