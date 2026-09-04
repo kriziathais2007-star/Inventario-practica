@@ -7,12 +7,12 @@
 }
 
 :root {
-    --bg:       #f4f6fb;
+    --bg:       #fafafa;
     --card:     #ffffff;
-    --border:   #e5e9f2;
-    --text:     #111827;
+    --border:   #e5e7eb;
+    --text:     #18181b;
     --muted:    #6b7280;
-    --accent:   #4f46e5;
+    --accent:   #f97316;
     --green:    #16a34a;
     --green-bg: #f0fdf4;
     --red:      #dc2626;
@@ -75,9 +75,9 @@ body {
     text-transform: uppercase;
 }
 .inv-mode-badge--entrada {
-    background: var(--green-bg);
-    color: var(--green);
-    border: 1px solid #bbf7d0;
+    background: #ffedd5;
+    color: #ea580c;
+    border: 1px solid #fed7aa;
 }
 .inv-mode-badge--salida {
     background: var(--red-bg);
@@ -107,6 +107,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 
 /* ── Producto escaneado ── */
@@ -119,11 +120,11 @@ body {
     background: var(--bg);
     border: 1px solid var(--border);
     min-height: 84px;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, background 0.3s;
 }
 .inv-product.has-product {
-    border-color: #c7d2fe;
-    background: #f5f3ff;
+    border-color: #fed7aa;
+    background: #fff7ed;
 }
 
 .inv-product-img {
@@ -147,10 +148,7 @@ body {
     object-fit: contain;
 }
 
-.inv-product-info {
-    flex: 1;
-    min-width: 0;
-}
+.inv-product-info { flex: 1; min-width: 0; }
 .inv-product-name {
     font-size: 0.95rem;
     font-weight: 700;
@@ -176,9 +174,7 @@ body {
 .inv-product-counter.visible { opacity: 1; }
 
 /* ── Input de código ── */
-.inv-input-wrap {
-    position: relative;
-}
+.inv-input-wrap { position: relative; }
 .inv-input-icon {
     position: absolute;
     left: 14px;
@@ -204,7 +200,7 @@ body {
 .inv-input-wrap input:focus {
     border-color: var(--accent);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+    box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
 }
 .inv-input-wrap:focus-within .inv-input-icon { color: var(--accent); }
 
@@ -249,7 +245,7 @@ body {
 .inv-btn-camara:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background: #f5f3ff;
+    background: #fff7ed;
 }
 
 /* ── Visor cámara ── */
@@ -274,7 +270,7 @@ body {
 .inv-camera-frame {
     width: 180px;
     height: 110px;
-    border: 2px solid rgba(79,70,229,0.85);
+    border: 2px solid rgba(249,115,22,0.9);
     border-radius: 8px;
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.38);
 }
@@ -302,18 +298,20 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 11px;
-    background: var(--accent);
+    padding: 13px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     color: #fff;
     border-radius: 10px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
+    transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(249,115,22,0.35);
 }
 .inv-btn-nuevo:hover {
-    background: #4338ca;
+    opacity: 0.92;
     transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(249,115,22,0.45);
 }
 
 /* ══════════════════════════════════
@@ -321,11 +319,8 @@ body {
 ══════════════════════════════════ */
 @media (max-width: 480px) {
     body { padding: 16px 12px 40px; }
-
     .inv-card { padding: 20px 16px; gap: 16px; }
-
     .inv-topbar { margin-bottom: 16px; }
-
     .inv-input-wrap input { font-size: 0.95rem; }
 }
 

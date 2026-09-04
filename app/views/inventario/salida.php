@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo TITLE_BUSINESS; ?> - Venta / Salida</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/inventario.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/inventario.css?v=3">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
             <i class="fa-solid fa-arrow-left"></i> Dashboard
         </a>
         <span class="inv-mode-badge inv-mode-badge--salida">
-            <i class="fa-solid fa-arrow-down"></i> Salida
+            <i class="fa-solid fa-cash-register"></i> Salida
         </span>
         <a href="<?php echo BASE_URL; ?>/inventario/entrada" class="inv-switch-link">
             <i class="fa-solid fa-arrow-left"></i> Ir a entrada
@@ -28,7 +28,7 @@
         <!-- Producto escaneado -->
         <div class="inv-product" id="productBox">
             <div class="inv-product-img" id="productImg">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-tag"></i>
             </div>
             <div class="inv-product-info">
                 <div class="inv-product-name" id="productName">Esperando escaneo…</div>

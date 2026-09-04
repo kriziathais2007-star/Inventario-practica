@@ -158,7 +158,7 @@ tbody td{
 
 .modal-form .form-group input:focus,
 .modal-form .form-group select:focus {
-    border-color: #2563eb;
+    border-color: #f97316;
 }
 
 .modal-form .form-group select {
@@ -184,7 +184,7 @@ tbody td{
 .btn-guardar-modal {
     width: 100%;
     padding: 12px;
-    background: #2563eb;
+    background: #f97316;
     color: white;
     border: none;
     border-radius: 8px;
@@ -194,9 +194,8 @@ tbody td{
     transition: background 0.2s;
     margin-top: 8px;
 }
-
 .btn-guardar-modal:hover {
-    background: #1d4ed8;
+    background: #ea580c;
 }
 
 @media (max-width: 520px) {

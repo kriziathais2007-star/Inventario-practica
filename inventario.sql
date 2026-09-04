@@ -1,9 +1,3 @@
--- ============================================================
---  BASE DE DATOS - SISTEMA DE INVENTARIO
---  Ejecuta este archivo completo en phpMyAdmin:
---  1. Abre phpMyAdmin → pestaña "SQL"
---  2. Pega todo el contenido y haz clic en "Ejecutar"
--- ============================================================
 
 DROP DATABASE IF EXISTS senai_asistencia;
 CREATE DATABASE senai_asistencia

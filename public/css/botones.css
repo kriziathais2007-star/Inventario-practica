@@ -10,14 +10,14 @@
     height: 38px;
     border: none;
     border-radius: 8px;
-    background: #2563eb;
+    background: #16a34a;
     color: white;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-editar:hover{
-    background: #1d4ed8;
+    background: #15803d;
 }
 
 /* BOTÓN ELIMINAR */
@@ -58,7 +58,7 @@
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: #4f46e5;
+    background: #f97316;
     color: white;
     border-radius: 8px;
     font-size: 14px;
@@ -66,9 +66,8 @@
     text-decoration: none;
     transition: background 0.2s;
 }
-
 .btn-nuevo:hover {
-    background: #4338ca;
+    background: #ea580c;
 }
 
 /* ── BADGE STOCK ── */
@@ -124,7 +123,7 @@
 
 .registro-form input:focus,
 .registro-form select:focus {
-    border-color: #4f46e5;
+    border-color: #f97316;
 }
 
 .btn.btn-primary {
@@ -132,7 +131,7 @@
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    background: #4f46e5;
+    background: #f97316;
     color: white;
     border: none;
     border-radius: 8px;
@@ -142,9 +141,8 @@
     transition: background 0.2s;
     margin-top: 8px;
 }
-
 .btn.btn-primary:hover {
-    background: #4338ca;
+    background: #ea580c;
 }
 
 /* ── BADGE ROL ── */
@@ -159,13 +157,12 @@
 }
 
 .badge-rol--superadmin {
-    background: #ede9fe;
-    color: #5b21b6;
+    background: #ffedd5;
+    color: #c2410c;
 }
-
 .badge-rol--admin {
-    background: #dbeafe;
-    color: #1e40af;
+    background: #fef9c3;
+    color: #854d0e;
 }
 
 /* ── ALERTA EN FORMULARIO DE REGISTRO ── */
@@ -229,8 +226,8 @@
 
 .img-upload-wrap:hover,
 .img-upload-wrap.drag-over {
-    border-color: #4f46e5;
-    background: #eef2ff;
+    border-color: #f97316;
+    background: #fff7ed;
 }
 
 .img-upload-wrap--sm {

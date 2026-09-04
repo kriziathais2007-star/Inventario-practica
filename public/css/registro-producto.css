@@ -39,8 +39,8 @@
 .rp-img-drop:hover,
 .rp-img-drop.drag-over {
     border-color: var(--accent);
-    background: #f5f3ff;
-    box-shadow: 0 0 0 4px rgba(79,70,229,0.08);
+    background: #fff7ed;
+    box-shadow: 0 0 0 4px rgba(249,115,22,0.1);
 }
 
 .rp-img-drop.has-img {
@@ -89,7 +89,7 @@
 
 .rp-img-drop:hover .rp-img-icon,
 .rp-img-drop.drag-over .rp-img-icon {
-    background: #ede9fe;
+    background: #ffedd5;
     color: var(--accent);
 }
 
@@ -223,7 +223,7 @@
 .rp-input-wrap input:focus {
     border-color: var(--accent);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+    box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
 }
 
 .rp-input-wrap input:focus + .rp-input-icon,
@@ -250,7 +250,7 @@
 .rp-field textarea:focus {
     border-color: var(--accent);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+    box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
 }
 
 /* Fila de dos columnas */
@@ -296,13 +296,12 @@
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(79,70,229,0.25);
+    box-shadow: 0 2px 8px rgba(249,115,22,0.3);
 }
-
 .rp-btn-guardar:hover:not(:disabled) {
-    background: #4338ca;
+    background: #ea580c;
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(79,70,229,0.3);
+    box-shadow: 0 4px 14px rgba(249,115,22,0.4);
 }
 
 .rp-btn-guardar:disabled {

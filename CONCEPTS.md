@@ -6,16 +6,14 @@ Explicación detallada de cada carpeta y archivo del proyecto.
 ## Estructura general
 
 ```
-employee-attendance-system/
+Inventario-practica/
 ├── app/
-├── config/
 ├── public/
-├── sql/
 ├── .env
 ├── .env.example
 ├── .gitignore
 ├── .htaccess
-├── README.md
+├── inventario.sql
 └── CONCEPTS.md
 ```
 
@@ -35,7 +33,7 @@ Clases base del framework MVC que construimos desde cero.
 | `App.php` | Inicializa la aplicación: arranca la sesión y lanza el Router |
 | `Router.php` | Lee la URL del navegador y decide qué Controller y método ejecutar |
 | `Controller.php` | Clase base. Todos los controllers heredan de esta clase y pueden usar su método `view()` |
-| `Model.php` | Clase base. Todos los modelos heredan de esta clase. Contiene la conexión PDO |
+| `Database.php` | Gestiona la conexión PDO a MariaDB. Lee las credenciales del archivo `.env` |
 
 #### ¿Cómo funciona el Router?
 
@@ -80,7 +78,7 @@ para que la vista los use directamente:
 
 ```php
 // En el controller
-$this->view('empleados/index', ['empleados' => $lista, 'titulo' => 'Mi lista']);
+$this->view('empleados/reportes', ['empleados' => $lista, 'titulo' => 'Lista de empleados']);
 
 // En la vista, ya puedes usar $empleados y $titulo directamente
 ```
@@ -110,7 +108,7 @@ y conecta los modelos con las vistas.
 
 **Ejemplo de flujo:**
 ```
-Usuario entra a /employees → Router → EmployeeController → Employee (model) → vista employees/index.php
+Usuario entra a /empleados → Router → EmpleadosController → Empleado (model) → vista empleados/reportes.php
 ```
 
 ---
@@ -123,7 +121,7 @@ Se usa cuando quieres que **dos URLs distintas hagan exactamente lo mismo**.
 **Caso 1 — SÍ necesitas alias: singular vs plural**
 
 El Router convierte la URL directamente en el nombre del método.
-Si tienes un método `reporte()` pero el usuario escribe `/asistencias/reportes`,
+Si tienes un método `reporte()` pero el usuario escribe `/productos/reportes`,
 el Router busca `reportes()` y no lo encuentra → error 404.
 La solución es crear un alias:
 
@@ -131,17 +129,17 @@ La solución es crear un alias:
 // Método real con toda la lógica
 public function reporte(): void {
     if (!isset($_SESSION['usuario'])) { ... }
-    $this->view('asistencias/reportes', [...]);
+    $this->view('productos/reportes', [...]);
 }
 
 // Alias: solo redirige al método real
-// Permite que /asistencias/reportes también funcione
+// Permite que /productos/reportes también funcione
 public function reportes(): void {
     $this->reporte();
 }
 ```
 
-Ahora tanto `/asistencias/reporte` como `/asistencias/reportes` funcionan.
+Ahora tanto `/productos/reporte` como `/productos/reportes` funcionan.
 
 ---
 
@@ -151,11 +149,11 @@ Si el nombre del método coincide exactamente con lo que el usuario escribe en l
 no hay ambigüedad y no hace falta alias.
 
 ```php
-// Solo existe una URL posible: /asistencias/ejemplo_hoja
+// Solo existe una URL posible: /productos/registro
 // El Router la mapea directamente a este método. No hay variante singular/plural.
-public function ejemplo_hoja(): void {
+public function registro(): void {
     if (!isset($_SESSION['usuario'])) { ... }
-    $this->view('asistencias/ejemplo_hoja', [...]);
+    $this->view('productos/registro', [...]);
 }
 ```
 
@@ -166,20 +164,20 @@ public function ejemplo_hoja(): void {
 | Pregunta | Respuesta | ¿Alias? |
 |----------|-----------|---------|
 | ¿Hay dos formas de escribir la misma URL? | `reporte` y `reportes` | ✅ Sí |
-| ¿El método `index()` es el punto de entrada del controller? | `/empleados` llama `index()` que llama `reporte()` | ✅ Sí |
-| ¿El nombre del método ya es exacto y único? | `ejemplo_hoja` | ❌ No |
+| ¿El método `index()` es el punto de entrada del controller? | `/inventario` llama `index()` que llama `entrada()` | ✅ Sí |
+| ¿El nombre del método ya es exacto y único? | `registro` | ❌ No |
 
 ---
 
 **Patrón completo de un controller bien estructurado:**
 
 ```php
-class AsistenciasController extends Controller {
+class ProductosController extends Controller {
 
-    // index() → punto de entrada de /asistencias
+    // index() → punto de entrada de /productos
     // Delega a otro método en vez de tener lógica propia
     public function index(): void {
-        $this->view('asistencias/index'); // página pública del kiosk
+        $this->reporte();
     }
 
     // Método con la lógica real
@@ -188,21 +186,21 @@ class AsistenciasController extends Controller {
             header('Location: ' . BASE_URL . '/login');
             exit;
         }
-        $this->view('asistencias/reportes', ['usuario' => $_SESSION['usuario']]);
+        $this->view('productos/reportes', ['usuario' => $_SESSION['usuario']]);
     }
 
-    // Alias: permite /asistencias/reportes además de /asistencias/reporte
+    // Alias: permite /productos/reportes además de /productos/reporte
     public function reportes(): void {
         $this->reporte();
     }
 
-    // Sin alias: /asistencias/ejemplo_hoja es la única URL posible
-    public function ejemplo_hoja(): void {
+    // Sin alias: /productos/registro es la única URL posible
+    public function registro(): void {
         if (!isset($_SESSION['usuario'])) {
             header('Location: ' . BASE_URL . '/login');
             exit;
         }
-        $this->view('asistencias/ejemplo_hoja', ['usuario' => $_SESSION['usuario']]);
+        $this->view('productos/registro', ['usuario' => $_SESSION['usuario']]);
     }
 }
 ```
@@ -215,8 +213,8 @@ y contiene los métodos para consultar, insertar, actualizar y eliminar registro
 
 **Ejemplo:**
 ```php
-class Employee extends Model {
-    // métodos: getAll(), findById(), save(), delete()
+class Producto {
+    // métodos: obtenerProductos(), buscarPorCodigo(), guardar(), editar(), eliminar()
 }
 ```
 
@@ -228,12 +226,14 @@ Cada carpeta representa un módulo del sistema.
 
 | Carpeta | Descripción |
 |---|---|
-| `layouts/` | Elementos que se repiten en todas las páginas (header, footer, navbar) |
-| `home/` | Vista del dashboard principal después del login |
-| `employees/` | Vistas del módulo de empleados (listar, crear, editar) |
-| `departments/` | Vistas del módulo de departamentos |
-| `attendance/` | Vistas del módulo de asistencia y reportes |
-| `auth/` | Vistas de autenticación (login, registro) |
+| `layouts/` | Elementos que se repiten en todas las páginas (header, footer, sidebar) |
+| `dashboard/` | Vista del panel principal después del login |
+| `empleados/` | Vistas del módulo de empleados (listar, registrar) |
+| `cargos/` | Vistas del módulo de cargos/puestos |
+| `productos/` | Vistas del módulo de productos (reporte, registro) |
+| `inventario/` | Vistas de entrada y salida de stock |
+| `usuarios/` | Vistas de administración de usuarios del sistema |
+| `auth/` | Vistas de autenticación (login) |
 
 ---
 
@@ -242,23 +242,15 @@ Archivos que se incluyen en todas las vistas para no repetir código (principio 
 
 | Archivo | Descripción |
 |---|---|
-| `header.php` | Parte superior de la página: navbar, menú, estilos CSS |
-| `footer.php` | Parte inferior de la página: scripts JS, copyright |
+| `sidebar-dashboard.php` | Barra lateral con el menú de navegación del panel admin |
+| `header-home.php` | Cabecera para la página pública |
+| `footer-home.php` | Pie de página para la página pública |
 
 **¿Cómo se usan?**
 ```php
-include '../layouts/header.php';
+include '../layouts/sidebar-dashboard.php';
 // ... contenido de la vista ...
-include '../layouts/footer.php';
 ```
-
----
-
-## `config/`
-
-| Archivo | Descripción |
-|---|---|
-| `database.php` | Clase Database que gestiona la conexión PDO a MariaDB. Lee las credenciales del archivo `.env` |
 
 ---
 
@@ -268,10 +260,9 @@ Los archivos fuera de `public/` no son accesibles directamente por seguridad.
 
 | Archivo/Carpeta | Descripción |
 |---|---|
-| `index.php` | Punto de entrada único de toda la aplicación. Carga el core y arranca el Router |
 | `css/` | Archivos de estilos CSS |
 | `js/` | Archivos JavaScript |
-| `image/` | Imágenes del sistema (fotos de empleados, íconos) |
+| `image/` | Imágenes del sistema (fotos de productos, íconos) |
 
 ---
 
@@ -283,7 +274,7 @@ Los archivos fuera de `public/` no son accesibles directamente por seguridad.
 | `.env.example` | Plantilla del `.env` sin datos reales. Se sube a GitHub para que otros sepan qué variables configurar |
 | `.gitignore` | Lista de archivos que Git debe ignorar (ej: `.env`) |
 | `.htaccess` | Intercepta todas las peticiones y las redirige a `app/index.php` para que el Router funcione |
-| `README.md` | Información principal del proyecto: descripción, instalación, tecnologías |
+| `inventario.sql` | Script SQL para crear la base de datos y sus tablas |
 | `CONCEPTS.md` | Este archivo. Explicación detallada de cada carpeta y archivo del proyecto |
 
 ### ¿Qué hace el `.htaccess` exactamente?
@@ -297,7 +288,7 @@ El nuestro tiene dos reglas:
 ```
 RewriteRule ^$ app/index.php [L]
 ```
-Cuando el usuario entra a `http://localhost/2026/employee-attendance-system/`, la URL no tiene nada después de la última barra. La regla `^$` detecta esa URL vacía y redirige directo a `app/index.php`.
+Cuando el usuario entra a `http://localhost/inventario/Inventario-practica/`, la URL no tiene nada después de la última barra. La regla `^$` detecta esa URL vacía y redirige directo a `app/index.php`.
 
 Esta regla no lleva condiciones porque la raíz ES una carpeta real y las condiciones `!-d` (no es carpeta) la bloquearían.
 
@@ -313,7 +304,7 @@ Si se cumple, captura todo lo que hay en la URL con `(.+)` y lo pasa como parám
 
 Ejemplo completo:
 ```
-El usuario entra a:  /2026/employee-attendance-system/login
+El usuario entra a:  /inventario/Inventario-practica/login
 "login" no es archivo ni carpeta real
 .htaccess redirige a: app/index.php?url=login
 Router lee ?url=login y despacha LoginController::index()
@@ -328,7 +319,7 @@ Router lee ?url=login y despacha LoginController::index()
 ## Flujo completo de una petición
 
 ```
-Navegador escribe: http://localhost/2026/employee-attendance-system/login
+Navegador escribe: http://localhost/inventario/Inventario-practica/login
 
 1. .htaccess detecta que "login" no es un archivo real
    y redirige a: app/index.php?url=login
@@ -357,11 +348,14 @@ Cuando hacemos una redirección con `header('Location: ...')` o ponemos un link 
 necesitamos saber la URL completa del proyecto. Esto cambia según el entorno:
 
 ```
-En tu computadora:  http://localhost/2026/employee-attendance-system
+En tu computadora:  http://localhost/inventario/Inventario-practica
 En producción:      https://miempresa.com
 ```
 
 Por eso guardamos la URL base en el archivo `.env` y la leemos en `config.php`.
 Así solo cambias un valor en `.env` y todo el proyecto se adapta.
 
-# PHP NO SE PUEDE LEER ENV
+# PHP NO SE PUEDE LEER ENV DIRECTAMENTE
+Los archivos `.env` no los lee PHP de forma nativa. El proyecto usa `config.php`
+para leer el `.env` con `parse_ini_file()` o similar y definir constantes como
+`DB_HOST`, `DB_NAME`, `BASE_URL`, etc.
