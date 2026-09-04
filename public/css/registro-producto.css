@@ -1,9 +1,9 @@
-/* ══════════════════════════════════════════════════════
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    REGISTRO DE PRODUCTO
    Depende de dashboard.css (variables, body, sidebar, main)
-══════════════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── Layout de dos columnas ── */
+/* â”€â”€ Layout de dos columnas â”€â”€ */
 .rp-wrapper {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -12,9 +12,9 @@
     max-width: 900px;
 }
 
-/* ══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    COLUMNA IMAGEN
-══════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .rp-img-col {
     display: flex;
     flex-direction: column;
@@ -39,8 +39,8 @@
 .rp-img-drop:hover,
 .rp-img-drop.drag-over {
     border-color: var(--accent);
-    background: #fff7ed;
-    box-shadow: 0 0 0 4px rgba(249,115,22,0.1);
+    background: #fff0f5;
+    box-shadow: 0 0 0 4px rgba(232,96,122,0.1);
 }
 
 .rp-img-drop.has-img {
@@ -89,7 +89,7 @@
 
 .rp-img-drop:hover .rp-img-icon,
 .rp-img-drop.drag-over .rp-img-icon {
-    background: #ffedd5;
+    background: #fde8ef;
     color: var(--accent);
 }
 
@@ -126,9 +126,9 @@
     background: #fef2f2;
 }
 
-/* ══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    COLUMNA FORMULARIO
-══════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .rp-form-col {
     background: #fff;
     border-radius: 16px;
@@ -174,7 +174,7 @@
     color: #111;
 }
 
-/* ── Campos ── */
+/* â”€â”€ Campos â”€â”€ */
 .rp-field {
     display: flex;
     flex-direction: column;
@@ -191,7 +191,7 @@
 .rp-required { color: var(--accent); margin-left: 2px; }
 .rp-optional { font-weight: 400; color: #9ca3af; font-size: 0.78rem; }
 
-/* Input con ícono */
+/* Input con Ã­cono */
 .rp-input-wrap {
     position: relative;
 }
@@ -223,7 +223,7 @@
 .rp-input-wrap input:focus {
     border-color: var(--accent);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+    box-shadow: 0 0 0 3px rgba(232,96,122,0.12);
 }
 
 .rp-input-wrap input:focus + .rp-input-icon,
@@ -250,7 +250,7 @@
 .rp-field textarea:focus {
     border-color: var(--accent);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+    box-shadow: 0 0 0 3px rgba(232,96,122,0.12);
 }
 
 /* Fila de dos columnas */
@@ -274,7 +274,7 @@
     background: #fff5f5;
 }
 
-/* ── Botones de acción ── */
+/* â”€â”€ Botones de acciÃ³n â”€â”€ */
 .rp-actions {
     display: flex;
     align-items: center;
@@ -296,12 +296,12 @@
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(249,115,22,0.3);
+    box-shadow: 0 2px 8px rgba(232,96,122,0.3);
 }
 .rp-btn-guardar:hover:not(:disabled) {
-    background: #ea580c;
+    background: #c94b65;
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(249,115,22,0.4);
+    box-shadow: 0 4px 14px rgba(232,96,122,0.4);
 }
 
 .rp-btn-guardar:disabled {
@@ -342,9 +342,9 @@
     border-color: #d1d5db;
 }
 
-/* ══════════════════════════════════════
-   TOAST DE NOTIFICACIÓN
-══════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TOAST DE NOTIFICACIÃ“N
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .rp-toast {
     position: fixed;
     bottom: 28px;
@@ -385,9 +385,9 @@
 
 .rp-toast-icon { font-size: 1rem; }
 
-/* ══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    RESPONSIVE
-══════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media (max-width: 820px) {
     .rp-wrapper {
         grid-template-columns: 1fr;
@@ -430,3 +430,4 @@
         max-width: unset;
     }
 }
+

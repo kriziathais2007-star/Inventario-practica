@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo TITLE_BUSINESS; ?> - Productos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/dashboard.css?v=3">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/table-responsive.css?v=3">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/botones.css?v=3">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/dashboard.css?v=4">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/table-responsive.css?v=4">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/botones.css?v=4">
 </head>
 <body>
 
@@ -38,9 +38,9 @@
                     <thead>
                         <tr>
                             <th>Imagen</th>
-                            <th>Código</th>
+                            <th>CÃ³digo</th>
                             <th>Nombre</th>
-                            <th>Descripción</th>
+                            <th>DescripciÃ³n</th>
                             <th>Stock</th>
                             <th>Precio</th>
                             <th>Acciones</th>
@@ -124,7 +124,7 @@
 
             <div class="form-row">
                 <div class="form-group">
-                    <label>Código</label>
+                    <label>CÃ³digo</label>
                     <input type="text" id="edit-codigo" name="codigo" required>
                 </div>
                 <div class="form-group">
@@ -133,7 +133,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label>Descripción</label>
+                <label>DescripciÃ³n</label>
                 <input type="text" id="edit-descripcion" name="descripcion">
             </div>
             <div class="form-row">
@@ -157,3 +157,4 @@
 <script src="<?php echo BASE_URL; ?>/public/js/productos-main.js"></script>
 </body>
 </html>
+

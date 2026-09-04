@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo TITLE_BUSINESS; ?> - Nuevo Producto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/dashboard.css?v=3">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/registro-producto.css?v=3">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/dashboard.css?v=4">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/registro-producto.css?v=4">
 </head>
 <body>
 
@@ -32,12 +32,12 @@
                         <i class="fa-solid fa-image"></i>
                     </div>
                     <p class="rp-img-label">Arrastra una imagen<br>o haz clic para seleccionar</p>
-                    <p class="rp-img-hint">JPG · PNG · WEBP &nbsp;·&nbsp; máx. 2 MB</p>
+                    <p class="rp-img-hint">JPG Â· PNG Â· WEBP &nbsp;Â·&nbsp; mÃ¡x. 2 MB</p>
                 </div>
                 <input type="file" id="imgInput" accept="image/jpeg,image/png,image/webp,image/gif" class="rp-img-input">
             </div>
 
-            <!-- Botón quitar imagen -->
+            <!-- BotÃ³n quitar imagen -->
             <button type="button" class="rp-img-remove hidden" id="btnQuitarImg">
                 <i class="fa-solid fa-xmark"></i> Quitar imagen
             </button>
@@ -56,7 +56,7 @@
 
                 <div class="rp-field">
                     <label for="codigo">
-                        Código de barras / SKU
+                        CÃ³digo de barras / SKU
                         <span class="rp-required">*</span>
                     </label>
                     <div class="rp-input-wrap">
@@ -82,9 +82,9 @@
                 </div>
 
                 <div class="rp-field">
-                    <label for="descripcion">Descripción <span class="rp-optional">(opcional)</span></label>
+                    <label for="descripcion">DescripciÃ³n <span class="rp-optional">(opcional)</span></label>
                     <textarea id="descripcion" name="descripcion" rows="2"
-                              placeholder="Marca, presentación, detalles…"></textarea>
+                              placeholder="Marca, presentaciÃ³n, detallesâ€¦"></textarea>
                 </div>
 
                 <div class="rp-row">
@@ -131,7 +131,7 @@
     </div><!-- /.rp-wrapper -->
 </main>
 
-<!-- Toast de notificación -->
+<!-- Toast de notificaciÃ³n -->
 <div class="rp-toast" id="rpToast" role="alert" aria-live="polite">
     <i class="rp-toast-icon fa-solid" id="rpToastIcon"></i>
     <span id="rpToastMsg"></span>
@@ -143,3 +143,4 @@
 <script src="<?php echo BASE_URL; ?>/public/js/registro-producto.js"></script>
 </body>
 </html>
+

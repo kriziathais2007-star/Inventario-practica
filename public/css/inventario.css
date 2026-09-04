@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 *, *::before, *::after {
     margin: 0;
@@ -7,12 +7,12 @@
 }
 
 :root {
-    --bg:       #fafafa;
+    --bg:       #fff8fb;
     --card:     #ffffff;
-    --border:   #e5e7eb;
-    --text:     #18181b;
+    --border:   #fbc8d8;
+    --text:     #3b1a26;
     --muted:    #6b7280;
-    --accent:   #f97316;
+    --accent:   #e8607a;
     --green:    #16a34a;
     --green-bg: #f0fdf4;
     --red:      #dc2626;
@@ -32,9 +32,9 @@ body {
     padding: 32px 16px 48px;
 }
 
-/* ══════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TOPBAR
-══════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .inv-topbar {
     width: 100%;
     max-width: 640px;
@@ -76,8 +76,8 @@ body {
 }
 .inv-mode-badge--entrada {
     background: #ffedd5;
-    color: #ea580c;
-    border: 1px solid #fed7aa;
+    color: #c94b65;
+    border: 1px solid #fbc8d8;
 }
 .inv-mode-badge--salida {
     background: var(--red-bg);
@@ -94,9 +94,9 @@ body {
 }
 .inv-switch-link:hover { color: var(--text); }
 
-/* ══════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CARD PRINCIPAL
-══════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .inv-card {
     width: 100%;
     max-width: 640px;
@@ -110,7 +110,7 @@ body {
     box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 
-/* ── Producto escaneado ── */
+/* â”€â”€ Producto escaneado â”€â”€ */
 .inv-product {
     display: flex;
     align-items: center;
@@ -123,8 +123,8 @@ body {
     transition: border-color 0.3s, background 0.3s;
 }
 .inv-product.has-product {
-    border-color: #fed7aa;
-    background: #fff7ed;
+    border-color: #fbc8d8;
+    background: #fff0f5;
 }
 
 .inv-product-img {
@@ -173,7 +173,7 @@ body {
 }
 .inv-product-counter.visible { opacity: 1; }
 
-/* ── Input de código ── */
+/* â”€â”€ Input de cÃ³digo â”€â”€ */
 .inv-input-wrap { position: relative; }
 .inv-input-icon {
     position: absolute;
@@ -193,18 +193,18 @@ body {
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
     color: var(--text);
-    background: #fafafa;
+    background: #fff8fb;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 .inv-input-wrap input:focus {
     border-color: var(--accent);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+    box-shadow: 0 0 0 3px rgba(232,96,122,0.12);
 }
 .inv-input-wrap:focus-within .inv-input-icon { color: var(--accent); }
 
-/* ── Hint ── */
+/* â”€â”€ Hint â”€â”€ */
 .inv-hint {
     font-size: 0.76rem;
     color: #9ca3af;
@@ -213,7 +213,7 @@ body {
 }
 .inv-hint strong { color: var(--accent); font-weight: 700; }
 
-/* ── Mensaje resultado ── */
+/* â”€â”€ Mensaje resultado â”€â”€ */
 .inv-mensaje {
     padding: 12px 18px;
     border-radius: 10px;
@@ -225,7 +225,7 @@ body {
 .inv-mensaje.ok    { display: block; background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
 .inv-mensaje.error { display: block; background: var(--red-bg);   color: var(--red);   border: 1px solid #fecaca; }
 
-/* ── Botón cámara ── */
+/* â”€â”€ BotÃ³n cÃ¡mara â”€â”€ */
 .inv-btn-camara {
     display: inline-flex;
     align-items: center;
@@ -245,10 +245,10 @@ body {
 .inv-btn-camara:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background: #fff7ed;
+    background: #fff0f5;
 }
 
-/* ── Visor cámara ── */
+/* â”€â”€ Visor cÃ¡mara â”€â”€ */
 .inv-camera-wrap {
     border-radius: 10px;
     overflow: hidden;
@@ -270,7 +270,7 @@ body {
 .inv-camera-frame {
     width: 180px;
     height: 110px;
-    border: 2px solid rgba(249,115,22,0.9);
+    border: 2px solid rgba(232,96,122,0.9);
     border-radius: 8px;
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.38);
 }
@@ -292,31 +292,31 @@ body {
 }
 .inv-btn-cerrar-camara:hover { background: rgba(0,0,0,0.8); }
 
-/* ── Botón nuevo producto ── */
+/* â”€â”€ BotÃ³n nuevo producto â”€â”€ */
 .inv-btn-nuevo {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     padding: 13px;
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    background: linear-gradient(135deg, #e8607a 0%, #c94b65 100%);
     color: #fff;
     border-radius: 10px;
     font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
     transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 14px rgba(249,115,22,0.35);
+    box-shadow: 0 4px 14px rgba(232,96,122,0.35);
 }
 .inv-btn-nuevo:hover {
     opacity: 0.92;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(249,115,22,0.45);
+    box-shadow: 0 6px 20px rgba(232,96,122,0.45);
 }
 
-/* ══════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    RESPONSIVE
-══════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media (max-width: 480px) {
     body { padding: 16px 12px 40px; }
     .inv-card { padding: 20px 16px; gap: 16px; }
@@ -325,3 +325,4 @@ body {
 }
 
 .hidden { display: none !important; }
+

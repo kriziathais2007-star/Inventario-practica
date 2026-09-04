@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo TITLE_BUSINESS; ?> - Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/dashboard.css?v=3">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/dashboard.css?v=4">
 </head>
 <body>
 
@@ -55,7 +55,7 @@
             </div>
             <div class="stat-info">
                 <div class="stat-value"><?php echo (int)($stats['stock_bajo'] ?? 0); ?></div>
-                <div class="stat-label">Stock bajo (≤ 5)</div>
+                <div class="stat-label">Stock bajo (â‰¤ 5)</div>
             </div>
         </div>
     </div>
@@ -87,3 +87,4 @@
 <script src="<?php echo BASE_URL; ?>/public/js/dashboard.js"></script>
 </body>
 </html>
+

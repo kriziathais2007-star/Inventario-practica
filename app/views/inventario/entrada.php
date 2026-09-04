@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo TITLE_BUSINESS; ?> - Entrada de Stock</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/inventario.css?v=3">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/inventario.css?v=4">
 </head>
 <body>
 
@@ -31,29 +31,29 @@
                 <i class="fa-solid fa-cubes"></i>
             </div>
             <div class="inv-product-info">
-                <div class="inv-product-name" id="productName">Esperando escaneo…</div>
+                <div class="inv-product-name" id="productName">Esperando escaneoâ€¦</div>
                 <div class="inv-product-meta" id="productStock"></div>
             </div>
             <div class="inv-product-counter" id="contador"></div>
         </div>
 
-        <!-- Input de código -->
+        <!-- Input de cÃ³digo -->
         <div class="inv-input-wrap">
             <i class="fa-solid fa-barcode inv-input-icon"></i>
             <input type="text" id="codigo"
-                   placeholder="Escanea o escribe el código de barras"
+                   placeholder="Escanea o escribe el cÃ³digo de barras"
                    autocomplete="off" autofocus>
         </div>
 
         <!-- Mensaje resultado -->
         <div class="inv-mensaje" id="mensaje"></div>
 
-        <!-- Botón cámara -->
+        <!-- BotÃ³n cÃ¡mara -->
         <button type="button" class="inv-btn-camara" id="btnCamara">
-            <i class="fa-solid fa-camera"></i> Usar cámara
+            <i class="fa-solid fa-camera"></i> Usar cÃ¡mara
         </button>
 
-        <!-- Visor de cámara -->
+        <!-- Visor de cÃ¡mara -->
         <div class="inv-camera-wrap" id="cameraContainer">
             <video id="cameraVideo" autoplay playsinline muted></video>
             <div class="inv-camera-overlay">
@@ -79,3 +79,4 @@
     <script src="<?php echo BASE_URL; ?>/public/js/inventario-entrada.js"></script>
 </body>
 </html>
+
