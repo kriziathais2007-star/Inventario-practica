@@ -2,3 +2,5 @@
 
 ## BASE DE DATOS 
 <img src="base_datos.jpg" alt="Texto alternativo" width="700" height="700" style="vertical-align: middle;">&nbsp;&nbsp;&nbsp;
+
+<a href="https://www.figma.com/design/l7y8IQNUyx6yv7bdmFNHYu/Sistema_Asistencia_-_Inventario?node-id=90-198&t=ZALmm1kBePRnJxNx-1">
